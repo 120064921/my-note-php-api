@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 
 class NoteController extends Controller
 {
-    public function index(Request $request)
+    public function getAll(Request $request)
     {
         $uid = $request->get('uid',1);
         $notes = DB::table('notes')->where(['uid'=>$uid])->select();
@@ -19,7 +19,7 @@ class NoteController extends Controller
         ];
     }
 
-    public function show(Request $request)
+    public function getOne(Request $request)
     {
         $id = $request->id;
         $note = DB::table('notes')->find($id);

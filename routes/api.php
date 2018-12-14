@@ -20,4 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/user/login', 'UserController@login');
 Route::get('/user/logout', 'UserController@logout');
+
+Route::post('/note/getAll', 'NoteController@getAll');
+Route::post('/note/getOne', 'NoteController@getOne');
 Route::post('/note/create', 'NoteController@create');
