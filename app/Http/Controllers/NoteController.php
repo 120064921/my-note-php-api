@@ -37,7 +37,7 @@ class NoteController extends Controller
         $uid = $request->post('uid',1);
         $content = $request->post('content');
 
-        $result = DB::table('users')->insert(['uid'=>$uid, 'content'=>$content]);
+        $result = DB::table('notes')->insert(['uid'=>$uid, 'content'=>$content]);
 
         return [
             'code'=> 200,
